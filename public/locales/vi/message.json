@@ -1,0 +1,7 @@
+{
+  "ERROR": {
+    "COMMON_FAILED": "Có lỗi xảy ra. Vui lòng thử lại sau.",
+    "DATA_IS_REQUIRED": "Dữ liệu này là bắt buộc.",
+     "INVALID_INPUT": "Dữ liệu đầu vào không hợp lệ."
+  }
+}
