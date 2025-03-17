@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "./presentation/styles/global.css";
-import App from "./app";
+import App from "./app/root";
 
 import "./lib/translator";
 
