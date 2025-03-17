@@ -82,18 +82,18 @@ Below is a general structure for React applications. There may be some differenc
 
 **✅ Yes, it has:**
 
-  1. **Separation of Concerns:**
+  1. Separation of Concerns:
     - User interfaces (`/presentation`).
     - Business logic (`/services`).
     - Shared utilities (`/lib`).
     - Configuration (`/configs`).
-  2. **Encapsulation of Features:**
+  2. Encapsulation of Features:
     - `/presentation/features/feature-a/` contains components, hooks, styles, and types specific to that feature.
     - This makes it __*scalable*__ and __*maintainable*__.
-  3. **Service Layer:**
+  3. Service Layer:
     - `/services` contains business logic, DTOs, schemas, and HTTP calls, which decouples the API from the UI.
     - The schema is used to validate data from the client.
-  4. **State Management:**
+  4. State Management:
     - `/stores` follows single responsibility by managing state separately.
 
 ## 👓 Wrapping UI Components (Wrapper Pattern)
