@@ -83,22 +83,22 @@ Below is a general structure for React applications. There may be some differenc
 **✅ Yes, it has:**
 
   1. **Separation of Concerns:**
-    - User interfaces (==/presentation==).
-    - Business logic (==/services==)
-    - Shared utilities (==/lib==)
-    - Configuration (==/configs==)
+    - User interfaces (`/presentation`).
+    - Business logic (`/services`)
+    - Shared utilities (`/lib`)
+    - Configuration (`/configs`)
   2. **Encapsulation of Features:**
-    - ==/presentation/features/feature-a/== contains components, hooks, styles, and types specific to that feature.
+    - `/presentation/features/feature-a/` contains components, hooks, styles, and types specific to that feature.
     - This makes it __*scalable*__ and __*maintainable*__.
   3. **Service Layer:**
-    - ==/services== contains business logic, DTOs, schemas, and HTTP calls, which decouples the API from the UI.
+    - `/services` contains business logic, DTOs, schemas, and HTTP calls, which decouples the API from the UI.
     - The schema is used to validate data from the client.
   4. **State Management:**
-    - ==/stores== follows single responsibility by managing state separately.
+    - `/stores` follows single responsibility by managing state separately.
 
 ## 👓 Wrapping UI Components (Wrapper Pattern)
 
-Using in ==/presentation/components== and ==/lib== folder. It saves time and prevents technical debt.
+Using in `/presentation/components` and `/lib` folder. It saves time and prevents technical debt.
 
 **Benefits:**
 - Encapsulation: Modify styles and behavior in one place.
