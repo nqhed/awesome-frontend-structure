@@ -98,7 +98,7 @@ Below is a general structure for React applications. There may be some differenc
 
 ## 👓 Wrapping UI Components (Wrapper Pattern)
 
-Using in `/presentation/components` and `/lib` folder. It saves time and prevents technical debt.
+Used in `/presentation/components` and `/lib` folders. It saves time and prevents technical debt.
 
 **Benefits:**
 - Encapsulation: Modify styles and behavior in one place.
