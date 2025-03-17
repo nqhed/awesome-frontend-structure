@@ -84,9 +84,9 @@ Below is a general structure for React applications. There may be some differenc
 
   1. **Separation of Concerns:**
     - User interfaces (`/presentation`).
-    - Business logic (`/services`)
-    - Shared utilities (`/lib`)
-    - Configuration (`/configs`)
+    - Business logic (`/services`).
+    - Shared utilities (`/lib`).
+    - Configuration (`/configs`).
   2. **Encapsulation of Features:**
     - `/presentation/features/feature-a/` contains components, hooks, styles, and types specific to that feature.
     - This makes it __*scalable*__ and __*maintainable*__.
