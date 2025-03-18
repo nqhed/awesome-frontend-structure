@@ -1,7 +1,7 @@
-import LoginView from "@/presentation/features/auth/login.view";
-import BlogDetailView from "@/presentation/features/blog/blog-detail.view";
-import BlogListView from "@/presentation/features/blog/blog-list.view";
-import DashboardView from "@/presentation/features/dashboard/dashboard.view";
+import LoginView from "@/presentation/views/auth/login.view";
+import BlogDetailView from "@/presentation/views/blog/blog-detail.view";
+import BlogListView from "@/presentation/views/blog/blog-list.view";
+import DashboardView from "@/presentation/views/dashboard/dashboard.view";
 import { Routes, Route } from "react-router";
 
 const App = () => {
