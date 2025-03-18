@@ -35,20 +35,6 @@ Below is a general structure for React applications. There may be some differenc
 │   │   │       ├── button.tsx
 │   │   │       ├── input.tsx
 │   │   │       └── ...
-│   │   ├── features/               # Feature-based modular architecture
-│   │   │   └── feature-a/          # Feature A
-│   │   │       ├── __tests__/      # Test the feature
-│   │   │       ├── components/     # Components specific to Feature A
-│   │   │       │   └── form-a.tsx
-│   │   │       ├── hooks/          # Custom hooks for Feature A
-│   │   │       │   └── use-form-a.tsx
-│   │   │       ├── styles/         # Feature-specific styles
-│   │   │       │   └── form-a.css
-│   │   │       ├── types/          # Type definitions
-│   │   │       │   ├── form-a-return-type.ts
-│   │   │       │   └── index.ts
-│   │   │       ├── feature-a-list.view.tsx   # List view for Feature A
-│   │   │       └── feature-a-detail.view.tsx # Detail view for Feature A
 │   │   ├── hooks/                  # Global custom hooks
 │   │   │   ├── __test__/            # Tests for hooks
 │   │   │   ├── use-scroll.ts        # Example hook (scroll behavior)
@@ -57,9 +43,23 @@ Below is a general structure for React applications. There may be some differenc
 │   │   │   │── __tests__/            # Tests for stores
 │   │   │   ├── use-user.store.ts     # Example user store
 │   │   │   └── ...
-│   │   └── styles/                   # Global and custom styles
-│   │       ├── custom-a.css
-│   │       └── global.css
+│   │   ├── styles/                   # Global and custom styles
+│   │   │   ├── custom-a.css
+│   │   │   └── global.css
+│   │   ├── views/               # view-based modular architecture
+│   │   │   └── view-a/          # view A
+│   │   │       ├── __tests__/      # Test the view
+│   │   │       ├── components/     # Components specific to view A
+│   │   │       │   └── form-a.tsx
+│   │   │       ├── hooks/          # Custom hooks for view A
+│   │   │       │   └── use-form-a.tsx
+│   │   │       ├── styles/         # view-specific styles
+│   │   │       │   └── form-a.css
+│   │   │       ├── types/          # Type definitions
+│   │   │       │   ├── form-a-return-type.ts
+│   │   │       │   └── index.ts
+│   │   │       ├── view-a-list.view.tsx   # List view for view A
+│   │   │       └── view-a-detail.view.tsx # Detail view for view A
 │   ├── services/                     # Business logic and API service layer
 │   │   ├── _models/                   # Type models for API responses
 │   │   │   ├── ...
@@ -77,36 +77,75 @@ Below is a general structure for React applications. There may be some differenc
 └── ...<some configuration files>       # Various configuration files (ESLint, Prettier, etc.)
 ```
 
------
-## 🔍 Does it follow Clean Architecture?
+---
 
-**✅ Yes, it has:**
+## 🔍 Which design pattern aligns with this structure?
 
-  * Separation of Concerns:
-    - User interfaces (`/presentation`).
-    - Business logic (`/services`).
-    - Shared utilities (`/lib`).
-    - Configuration (`/configs`).
-  * Encapsulation of Features:
-    - `/presentation/features/feature-a/` contains components, hooks, styles, and types specific to that feature.
-    - This makes it __*scalable*__ and __*maintainable*__.
-  * Service Layer:
-    - `/services` contains business logic, DTOs, schemas, and HTTP calls, which decouples the API from the UI.
-    - The schema is used to validate data from the client.
-  * State Management:
-    - `/stores` follows single responsibility by managing state separately.
+| Pattern                           | Match Level   | Why?                                                      |
+|-----------------------------------|--------------|-----------------------------------------------------------|
+| **Layered Architecture (N-Tier)** | ✅✅✅ High   | Clear separation of Presentation, Services, and Models    |
+| **View-Based Modular Architecture (VBA)** | ✅✅✅ High   | View-based organization (`views/view-a/`)                |
+| **Component-Driven Architecture (CDA)** | ✅✅ Medium  | UI modularization using `components/ui/`                  |
+| **Feature-Sliced Design (FSD)**   | ❌ Low       | Missing feature-based layers like `shared/`, `entities/`, `features/` |
+| **Domain-Driven Design (DDD)**    | ❌ Very Low  | No explicit domain layer or use-case separation           |
+| **Clean Architecture**            | ❌ Low       | No clear **domain layer**, **use cases**, or **dependency inversion** |
 
-## 👓 Wrapping UI Components (Wrapper Pattern)
+### 🌟 What This Means
+- ✅ That structure is good for UI-heavy applications like Next.js, React-based dashboards, or SaaS platforms.
+- ✅ It scales well in terms of views, making it great for complex UI applications.
 
-Used in `/presentation/components` and `/lib` folders. It saves time and prevents technical debt.
+## 📦 Applied The Wrapper Pattern
+
+We have applied the Wrapper Pattern in the `/presentation/components` and `/lib` folders to improve code efficiency and maintainability. This approach saves time and reduces technical debt by centralizing common behaviors and styles.
 
 **Benefits:**
-- Encapsulation: Modify styles and behavior in one place.
-- Centralized Theming: Keep the design consistent across the app.
-- Maintainability: Manage UI imports from a single source.
-- Scalability: Easily add features like logging and permissions.
-- Future-Proofing: Simplifies UI library migration.
+
+✅ Benefits of the Wrapper Pattern:
+🔹 Encapsulation – Keep styles and behavior in one place, making updates easier.
+🔹 Centralized Theming – Ensure a consistent design across the app.
+🔹 Maintainability – Manage UI imports from a single source, reducing redundancy.
+🔹 Scalability – Easily add new features like logging, authentication, or permissions.
+🔹 Future-Proofing – Simplifies UI library migrations by wrapping external components.
+
+## ⁉️ Why Does It Not Fully Follow Domain-Driven Design or Clean Architecture?
+
+While Domain-Driven Design (DDD) and Clean Architecture (CA) work well for backend systems with complex business logic, fully applying them to a frontend app can create unnecessary complexity.
+
+**1️⃣ DDD and CA are designed for Complex Business Domains, Not UI Logic:**
+DDD and CA are best suited for backend systems with rich business logic, while frontend apps mainly focus on UI rendering and user interactions.
+
+**2️⃣ Too Much Boilerplate for a Frontend App**
+Implementing full DDD and CA requires entities, aggregates, repositories, and domain services, which add overhead without clear benefits.
+💡 In frontend apps, we primarily fetch data from APIs—we don’t need to define business rules at this level.
+
+**3️⃣ Frontend Apps Rely on API Calls, Not Repositories**
+DDD and CA emphasize the repository pattern for managing data access, but frontend apps mostly interact with APIs (REST or GraphQL).
+💡 Unlike backend systems, Frontend apps don’t need full repository abstractions—they simply fetch and display data.
+
+**4️⃣ Increases Complexity Without Benefits**
+Most frontend apps prioritize UI/UX, performance, and maintainability over deep domain modeling.
+💡 Over-engineering frontend logic slows development without improving the user experience.
+
+**5️⃣ Slows Down Development Speed**
+More abstraction = more boilerplate = slower development.
+💡 Adding unnecessary layers increases complexity without making the app more scalable or maintainable.
+
+## 🤌🏼 How About Feature-Sliced Design (FSD)?
+
+✅ Yes, that’s a great idea if you want to organize your frontend application in more detail.
+ [Feature-Sliced Design document](https://github.com/feature-sliced/documentation)
+
+
+
+## 📖 References
+
+- [Architecture of modern frontend](https://blog.meetbrackets.com/architectures-of-modern-front-end-applications-8859dfe6c12e)
+- [Feature-Sliced-Design (FSD) the best frontend architecture](https://dev.to/m_midas/feature-sliced-design-the-best-frontend-architecture-4noj)
+- [React Folder Structure in 5 Steps - 2025](https://www.robinwieruch.de/react-folder-structure/)
+- [3 Levels of Data Validation in a Full Stack Application With React](https://www.highlight.io/blog/3-levels-of-data-validation-in-a-full-stack-application-with-react)
+- [Clean Architecture on Frontend](https://dev.to/bespoyasov/clean-architecture-on-frontend-4311)
+- [Story of a Failed React Project](https://dev.to/mohammadfaisal/story-of-a-failed-react-project-4bhp)
 
 ## 🗄️ Examples
 
-- [Vite - React - Typescript - ShadCN-UI](https://github.com/nqhed/awesome-frontend-structure/tree/vite-react-ts-shadcn)
+- [Vite - React - Typescript - Shadcn](https://github.com/nqhed/awesome-frontend-structure/tree/vite-react-ts-shadcn)
