@@ -133,9 +133,14 @@ More abstraction = more boilerplate = slower development.
 ## 🤌🏼 How About Feature-Sliced Design (FSD)?
 
 ✅ Yes, that’s a great idea if you want to organize your frontend application in more detail.
- [Feature-Sliced Design document](https://github.com/feature-sliced/documentation)
 
+😊 **Feature-Sliced Design (FSD)** is a modern architecture that helps scale frontend applications, but I haven't used it because:
 
+1️⃣ FSD forces a deep folder structure, which adds unnecessary complexity if your app isn't large enough.
+2️⃣ Harder for new developers to learn.
+3️⃣ Increased file & folder overhead.
+4️⃣ Global state management becomes harder because each feature handles its own state.
+5️⃣ Harder to refactor shared logic.
 
 ## 📖 References
 
@@ -145,6 +150,7 @@ More abstraction = more boilerplate = slower development.
 - [3 Levels of Data Validation in a Full Stack Application With React](https://www.highlight.io/blog/3-levels-of-data-validation-in-a-full-stack-application-with-react)
 - [Clean Architecture on Frontend](https://dev.to/bespoyasov/clean-architecture-on-frontend-4311)
 - [Story of a Failed React Project](https://dev.to/mohammadfaisal/story-of-a-failed-react-project-4bhp)
+- [Feature-Sliced Design document](https://github.com/feature-sliced)
 
 ## 🗄️ Examples
 
