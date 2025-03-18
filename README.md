@@ -1,6 +1,6 @@
 # Awesome Frontend Structure
 
-Below is a general structure for React applications. There may be some differences in the source code to suit the project's technology and business requirements.
+Below is a general structure for Frontend applications. There may be some differences in the source code to suit the project's technology and business requirements.
 
 ```
 .
@@ -98,14 +98,17 @@ Below is a general structure for React applications. There may be some differenc
 
 We have applied the Wrapper Pattern in the `/presentation/components` and `/lib` folders to improve code efficiency and maintainability. This approach saves time and reduces technical debt by centralizing common behaviors and styles.
 
-**Benefits:**
-
 ✅ Benefits of the Wrapper Pattern:
-🔹 Encapsulation – Keep styles and behavior in one place, making updates easier.
-🔹 Centralized Theming – Ensure a consistent design across the app.
-🔹 Maintainability – Manage UI imports from a single source, reducing redundancy.
-🔹 Scalability – Easily add new features like logging, authentication, or permissions.
-🔹 Future-Proofing – Simplifies UI library migrations by wrapping external components.
+
+🔹 **Encapsulation** – Keep styles and behavior in one place, making updates easier.
+
+🔹 **Centralized Theming** – Ensure a consistent design across the app.
+
+🔹 **Maintainability** – Manage UI imports from a single source, reducing redundancy.
+
+🔹 **Scalability** – Easily add new features like logging, authentication, or permissions.
+
+🔹 **Future-Proofing** – Simplifies UI library migrations by wrapping external components.
 
 ## ⁉️ Why Does It Not Fully Follow Domain-Driven Design or Clean Architecture?
 
@@ -141,6 +144,10 @@ More abstraction = more boilerplate = slower development.
 3️⃣ Increased file & folder overhead.
 4️⃣ Global state management becomes harder because each feature handles its own state.
 5️⃣ Harder to refactor shared logic.
+
+## 💅 Coding Convention
+
+UPDATING...
 
 ## 📖 References
 
