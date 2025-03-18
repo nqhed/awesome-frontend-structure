@@ -79,7 +79,7 @@ Below is a general structure for Frontend applications. There may be some differ
 
 ---
 
-## 🔍 Which design pattern aligns with this structure?
+# 🔍 Which design pattern aligns with this structure?
 
 | Pattern                                   | Match Level | Why?                                                                  |
 | ----------------------------------------- | ----------- | --------------------------------------------------------------------- |
@@ -97,9 +97,9 @@ Below is a general structure for Frontend applications. There may be some differ
 
 <br/>
 
-## 💅 Convention
+# 💅 Convention
 
-#### 1. Folder Naming Conventions
+### 1. Folder Naming Conventions
 
 | Folder Type               | Naming Convention     | Example                         |
 | ------------------------- | --------------------- | ------------------------------- |
@@ -111,7 +111,7 @@ Below is a general structure for Frontend applications. There may be some differ
 | **State management**      | kebab-case            | `stores/`                       |
 | **Style folders**         | kebab-case            | `styles/`                       |
 
-#### 2. File Naming Conventions
+### 2. File Naming Conventions
 
 | File Type               | Naming Convention                              | Example                                          |
 | ----------------------- | ---------------------------------------------- | ------------------------------------------------ |
@@ -126,7 +126,7 @@ Below is a general structure for Frontend applications. There may be some differ
 | **Configuration files** | kebab-case                                     | `vite-env.d.ts`, `config.ts`                     |
 | **Tests**               | kebab-case, ends with `.test.ts` or `.spec.ts` | `service-a.test.ts`                              |
 
-##### 📌 Exception:
+#### 📌 Exception:
 
 - My component file names and hook file names use `kebab-case` to synchronize with ShadCN-UI. You can use `PascalCase` for component file names and `camelCase` for hooks that start with `use` to match your team's codebase.
 - You should apply the `Wrapper Pattern` for external libraries and avoid calling them directly.
@@ -145,7 +145,7 @@ Below is a general structure for Frontend applications. There may be some differ
 
 🔹 **Future-Proofing** – Simplifies UI library migrations by wrapping external components.
 
-#### 3. Naming Conventions for Variables, Constants, Functions, and Events
+### 3. Naming Conventions for Variables, Constants, Functions, and Events
 
 | Element Type                    | Naming Convention                                      | Example                                   |
 | ------------------------------- | ------------------------------------------------------ | ----------------------------------------- |
@@ -162,14 +162,15 @@ Below is a general structure for Frontend applications. There may be some differ
 | **GraphQL Queries & Mutations** | camelCase                                              | `getUserQuery`, `updateProfileMutation`   |
 | **Enums**                       | PascalCase                                             | `UserRole.Admin`, `ButtonVariant.Primary` |
 
-<br/><br/>
-## 🧪 Testing Strategy
+<br/>
+
+# 🧪 Testing Strategy
 
 Updating...
 
 <br/>
 
-## ⁉️ Why Does It Not Fully Follow Domain-Driven Design or Clean Architecture?
+# ⁉️ Why Does It Not Fully Follow Domain-Driven Design or Clean Architecture?
 
 While Domain-Driven Design (DDD) and Clean Architecture (CA) work well for backend systems with complex business logic, fully applying them to a frontend app can create unnecessary complexity.
 
@@ -194,7 +195,7 @@ More abstraction = more boilerplate = slower development.
 
 <br/>
 
-## 🤌🏼 How About Feature-Sliced Design (FSD)?
+# 🤌🏼 How About Feature-Sliced Design (FSD)?
 
 ✅ Yes, that’s a great idea if you want to organize your frontend application in more detail.
 
@@ -212,13 +213,13 @@ More abstraction = more boilerplate = slower development.
 
 <br/>
 
-## 🤏 What if your project is too small and hard to follow my structure?
+# 🤏 What if your project is too small and hard to follow my structure?
 
 Just follow this article: [Recommended Folder Structure for React 2025](https://dev.to/pramod_boda/recommended-folder-structure-for-react-2025-48mc)
 
 <br/>
 
-## 📖 References
+# 📖 References
 
 - [Architecture of modern frontend](https://blog.meetbrackets.com/architectures-of-modern-front-end-applications-8859dfe6c12e)
 - [Feature-Sliced-Design (FSD) the best frontend architecture](https://dev.to/m_midas/feature-sliced-design-the-best-frontend-architecture-4noj)
@@ -228,6 +229,6 @@ Just follow this article: [Recommended Folder Structure for React 2025](https://
 - [Story of a Failed React Project](https://dev.to/mohammadfaisal/story-of-a-failed-react-project-4bhp)
 - [Feature-Sliced Design document](https://github.com/feature-sliced)
 
-## 🗄️ Examples
+# 🗄️ Examples
 
 - [Vite - React - Typescript - Shadcn](https://github.com/nqhed/awesome-frontend-structure/tree/vite-react-ts-shadcn)
