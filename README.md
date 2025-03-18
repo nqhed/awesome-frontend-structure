@@ -175,21 +175,26 @@ Updating...
 While Domain-Driven Design (DDD) and Clean Architecture (CA) work well for backend systems with complex business logic, fully applying them to a frontend app can create unnecessary complexity.
 
 **1️⃣ DDD and CA are designed for Complex Business Domains, Not UI Logic:**
+
 DDD and CA are best suited for backend systems with rich business logic, while frontend apps mainly focus on UI rendering and user interactions.
 
 **2️⃣ Too Much Boilerplate for a Frontend App**
+
 Implementing full DDD and CA requires entities, aggregates, repositories, and domain services, which add overhead without clear benefits.
 💡 In frontend apps, we primarily fetch data from APIs—we don’t need to define business rules at this level.
 
 **3️⃣ Frontend Apps Rely on API Calls, Not Repositories**
+
 DDD and CA emphasize the repository pattern for managing data access, but frontend apps mostly interact with APIs (REST or GraphQL).
 💡 Unlike backend systems, Frontend apps don’t need full repository abstractions—they simply fetch and display data.
 
 **4️⃣ Increases Complexity Without Benefits**
+
 Most frontend apps prioritize UI/UX, performance, and maintainability over deep domain modeling.
 💡 Over-engineering frontend logic slows development without improving the user experience.
 
 **5️⃣ Slows Down Development Speed**
+
 More abstraction = more boilerplate = slower development.
 💡 Adding unnecessary layers increases complexity without making the app more scalable or maintainable.
 
@@ -228,6 +233,8 @@ Just follow this article: [Recommended Folder Structure for React 2025](https://
 - [Clean Architecture on Frontend](https://dev.to/bespoyasov/clean-architecture-on-frontend-4311)
 - [Story of a Failed React Project](https://dev.to/mohammadfaisal/story-of-a-failed-react-project-4bhp)
 - [Feature-Sliced Design document](https://github.com/feature-sliced)
+
+<br/>
 
 # 🗄️ Examples
 
