@@ -81,22 +81,55 @@ Below is a general structure for Frontend applications. There may be some differ
 
 ## 🔍 Which design pattern aligns with this structure?
 
-| Pattern                           | Match Level   | Why?                                                      |
-|-----------------------------------|--------------|-----------------------------------------------------------|
-| **Layered Architecture (N-Tier)** | ✅✅✅ High   | Clear separation of Presentation, Services, and Models    |
-| **View-Based Modular Architecture (VBA)** | ✅✅✅ High   | View-based organization (`views/view-a/`)                |
-| **Component-Driven Architecture (CDA)** | ✅✅ Medium  | UI modularization using `components/ui/`                  |
-| **Feature-Sliced Design (FSD)**   | ❌ Low       | Missing feature-based layers like `shared/`, `entities/`, `features/` |
-| **Domain-Driven Design (DDD)**    | ❌ Very Low  | No explicit domain layer or use-case separation           |
-| **Clean Architecture**            | ❌ Low       | No clear **domain layer**, **use cases**, or **dependency inversion** |
+| Pattern                                   | Match Level | Why?                                                                  |
+| ----------------------------------------- | ----------- | --------------------------------------------------------------------- |
+| **Layered Architecture (N-Tier)**         | ✅✅✅ High | Clear separation of Presentation, Services, and Models                |
+| **View-Based Modular Architecture (VBA)** | ✅✅✅ High | View-based organization (`views/view-a/`)                             |
+| **Component-Driven Architecture (CDA)**   | ✅✅ Medium | UI modularization using `components/ui/`                              |
+| **Feature-Sliced Design (FSD)**           | ❌ Low      | Missing feature-based layers like `shared/`, `entities/`, `features/` |
+| **Domain-Driven Design (DDD)**            | ❌ Very Low | No explicit domain layer or use-case separation                       |
+| **Clean Architecture**                    | ❌ Low      | No clear **domain layer**, **use cases**, or **dependency inversion** |
 
 ### 🌟 What This Means
+
 - ✅ That structure is good for UI-heavy applications like Next.js, React-based dashboards, or SaaS platforms.
 - ✅ It scales well in terms of views, making it great for complex UI applications.
 
-## 📦 Applied The Wrapper Pattern
+## 💅 Convention
 
-We have applied the Wrapper Pattern in the `/presentation/components` and `/lib` folders to improve code efficiency and maintainability. This approach saves time and reduces technical debt by centralizing common behaviors and styles.
+#### 1. Folder Naming Conventions
+
+| Folder Type               | Naming Convention     | Example                         |
+| ------------------------- | --------------------- | ------------------------------- |
+| **Root directories**      | kebab-case            | `public/`, `src/`               |
+| **Feature directories**   | kebab-case            | `services/`, `hooks/`, `views/` |
+| **Component directories** | kebab-case            | `common/`, `ui/`, `layout/`     |
+| **Utility directories**   | kebab-case            | `utils/`, `lib/`, `configs/`    |
+| **Test directories**      | Lowercase, kebab-case | `__test__/`, `__tests__/`       |
+| **State management**      | kebab-case            | `stores/`                       |
+| **Style folders**         | kebab-case            | `styles/`                       |
+
+#### 2. File Naming Conventions
+
+| File Type               | Naming Convention                              | Example                                          |
+| ----------------------- | ---------------------------------------------- | ------------------------------------------------ |
+| **Component files**     | kebab-case                                     | `header.tsx`, `footer.tsx`, `auth-wrapper.tsx`   |
+| **Utility files**       | kebab-case                                     | `http-client.ts`, `datetime-utils.ts`            |
+| **Hooks**               | kebab-case, starts with `use-`                 | `use-scroll.ts`, `use-auth.ts`                   |
+| **Global styles**       | kebab-case                                     | `global.css`, `custom-a.css`                     |
+| **View components**     | kebab-case, ends with `.view.tsx`              | `view-a-list.view.tsx`, `view-a-detail.view.tsx` |
+| **Service files**       | kebab-case, feature-based                      | `service-a.http.ts`, `service-a.schema.ts`       |
+| **State stores**        | kebab-case, starts with `use-`                 | `use-user.store.ts`                              |
+| **Types & Interfaces**  | kebab-case, ends with `.ts`                    | `form-a-return-type.ts`, `index.ts`              |
+| **Configuration files** | kebab-case                                     | `vite-env.d.ts`, `config.ts`                     |
+| **Tests**               | kebab-case, ends with `.test.ts` or `.spec.ts` | `service-a.test.ts`                              |
+
+##### 📌 Exception:
+
+- My component file names and hook file names use `kebab-case` to synchronize with ShadCN-UI. You can use `PascalCase` for component file names and `camelCase` for hooks that start with `use` to match your team's codebase.
+- You should apply the `Wrapper Pattern` for external libraries and avoid calling them directly.
+
+#️⃣ Example: If you use `Axios`, you should wrap it in an `httpClient` variable inside the `http-client.ts` file and use it to call APIs. In the case of UI, you should use components from libraries like AntD, MUI, etc., **indirectly**, similar to how ShadCN-UI does. This approach makes it easier to customize styles, logic, and other aspects in one place for the entire application.
 
 ✅ Benefits of the Wrapper Pattern:
 
@@ -109,6 +142,27 @@ We have applied the Wrapper Pattern in the `/presentation/components` and `/lib`
 🔹 **Scalability** – Easily add new features like logging, authentication, or permissions.
 
 🔹 **Future-Proofing** – Simplifies UI library migrations by wrapping external components.
+
+#### 3. Naming Conventions for Variables, Constants, Functions, and Events
+
+| Element Type                    | Naming Convention                                      | Example                                   |
+| ------------------------------- | ------------------------------------------------------ | ----------------------------------------- |
+| **Local Variables**             | camelCase                                              | `userProfile`, `totalCount`               |
+| **Constants**                   | UPPER_CASE_SNAKE                                       | `API_BASE_URL`, `MAX_LOGIN_ATTEMPTS`      |
+| **Environment Variables**       | UPPER*CASE_SNAKE, starts with `REACT_APP*` (for React) | `REACT_APP_API_KEY`                       |
+| **Functions**                   | camelCase, should be a verb                            | `fetchData()`, `handleSubmit()`           |
+| **Component**                   | PascalCase                                             | `Button`, `Input`                         |
+| **Component Props**             | camelCase                                              | `isLoading`, `userName`                   |
+| **Event Handlers**              | camelCase, prefixed with `handle`                      | `handleClick()`, `handleFormSubmit()`     |
+| **Booleans**                    | camelCase, prefixed with `is`, `has`, or `can`         | `isVisible`, `hasPermission`, `canEdit`   |
+| **State Variables (useState)**  | camelCase, prefixed with the state name                | `[user, setUser]`, `[isOpen, setIsOpen]`  |
+| **Redux Actions**               | UPPER_CASE_SNAKE                                       | `LOGIN_SUCCESS`, `FETCH_USER_FAILURE`     |
+| **GraphQL Queries & Mutations** | camelCase                                              | `getUserQuery`, `updateProfileMutation`   |
+| **Enums**                       | PascalCase                                             | `UserRole.Admin`, `ButtonVariant.Primary` |
+
+## 🧪 Testing Strategy
+
+Updating...
 
 ## ⁉️ Why Does It Not Fully Follow Domain-Driven Design or Clean Architecture?
 
@@ -145,9 +199,9 @@ More abstraction = more boilerplate = slower development.
 4️⃣ Global state management becomes harder because each feature handles its own state.
 5️⃣ Harder to refactor shared logic.
 
-## 💅 Coding Convention
+## 🤏 What if your project is too small and hard to follow my structure?
 
-UPDATING...
+Just follow this article: [Recommended Folder Structure for React 2025](https://dev.to/pramod_boda/recommended-folder-structure-for-react-2025-48mc)
 
 ## 📖 References
 
