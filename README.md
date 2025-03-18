@@ -95,6 +95,8 @@ Below is a general structure for Frontend applications. There may be some differ
 - ✅ That structure is good for UI-heavy applications like Next.js, React-based dashboards, or SaaS platforms.
 - ✅ It scales well in terms of views, making it great for complex UI applications.
 
+<br/>
+
 ## 💅 Convention
 
 #### 1. Folder Naming Conventions
@@ -160,9 +162,12 @@ Below is a general structure for Frontend applications. There may be some differ
 | **GraphQL Queries & Mutations** | camelCase                                              | `getUserQuery`, `updateProfileMutation`   |
 | **Enums**                       | PascalCase                                             | `UserRole.Admin`, `ButtonVariant.Primary` |
 
+<br/><br/>
 ## 🧪 Testing Strategy
 
 Updating...
+
+<br/>
 
 ## ⁉️ Why Does It Not Fully Follow Domain-Driven Design or Clean Architecture?
 
@@ -187,6 +192,8 @@ Most frontend apps prioritize UI/UX, performance, and maintainability over deep 
 More abstraction = more boilerplate = slower development.
 💡 Adding unnecessary layers increases complexity without making the app more scalable or maintainable.
 
+<br/>
+
 ## 🤌🏼 How About Feature-Sliced Design (FSD)?
 
 ✅ Yes, that’s a great idea if you want to organize your frontend application in more detail.
@@ -194,14 +201,22 @@ More abstraction = more boilerplate = slower development.
 😊 **Feature-Sliced Design (FSD)** is a modern architecture that helps scale frontend applications, but I haven't used it because:
 
 1️⃣ FSD forces a deep folder structure, which adds unnecessary complexity if your app isn't large enough.
+
 2️⃣ Harder for new developers to learn.
+
 3️⃣ Increased file & folder overhead.
+
 4️⃣ Global state management becomes harder because each feature handles its own state.
+
 5️⃣ Harder to refactor shared logic.
+
+<br/>
 
 ## 🤏 What if your project is too small and hard to follow my structure?
 
 Just follow this article: [Recommended Folder Structure for React 2025](https://dev.to/pramod_boda/recommended-folder-structure-for-react-2025-48mc)
+
+<br/>
 
 ## 📖 References
 
