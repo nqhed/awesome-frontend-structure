@@ -64,12 +64,10 @@ function Calendar({
               return (
                 <ChevronLeft className={cn("size-4", className)} {...props} />
               );
-            case "right":
+            default:
               return (
                 <ChevronRight className={cn("size-4", className)} {...props} />
               );
-            default:
-              return <></>;
           }
         },
       }}

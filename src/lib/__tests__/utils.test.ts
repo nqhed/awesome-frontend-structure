@@ -1,26 +1,43 @@
-import { describe, it, expect } from "vitest";
+import { describe, test, expect } from "vitest";
 import * as utils from "@/lib//utils";
 
 describe("Utils", () => {
   describe("cn", () => {
-    it("should return class names", () => {
+    test("return class names", () => {
       expect(utils.cn("class-1", "class-2")).toBe("class-1 class-2");
     });
   });
 
   describe("joinUrls", () => {
-    it("should join urls", () => {
+    test("join urls", () => {
       expect(utils.joinUrls({ urls: ["1", "2", "3"], isAbsolute: true })).toBe(
         "/1/2/3",
       );
+      expect(utils.joinUrls({ urls: ["1", "2", "3"], isAbsolute: false })).toBe(
+        "1/2/3",
+      );
+      expect(utils.joinUrls({ urls: ["/1", "2", "3"], isAbsolute: true })).toBe(
+        "/1/2/3",
+      );
+    });
+    test("join urls no urls", () => {
+      expect(utils.joinUrls({ urls: [], isAbsolute: true })).toBe("/");
+    });
+    test("join urls error", () => {
+      expect(() =>
+        utils.joinUrls({ urls: ["1", "2", 3] as string[], isAbsolute: true }),
+      ).toThrowError();
     });
   });
 
   describe("applyPrefix", () => {
-    it("should apply no prefix", () => {
+    test("apply no prefix", () => {
       expect(utils.applyPrefix({ url: "/test", prefix: "none" })).toBe("/test");
     });
-    it("should apply prefix", () => {
+    test("apply no prefix 2", () => {
+      expect(utils.applyPrefix({ url: "", prefix: "none" })).toBe("/");
+    });
+    test("apply prefix", () => {
       expect(utils.applyPrefix({ url: "/test", prefix: "other-service" })).toBe(
         "/other-service/test",
       );
@@ -28,13 +45,29 @@ describe("Utils", () => {
   });
 
   describe("assignParamsToUrl", () => {
-    it("should return url if no params", () => {
+    test("return url if no params", () => {
+      expect(
+        utils.assignParamsToUrl({
+          url: "/test/{id}",
+          params: [],
+        }),
+      ).toBe("/test/{id}");
+    });
+    test("return url with params", () => {
       expect(
         utils.assignParamsToUrl({
           url: "/test/{id}",
           params: [{ key: "id", value: "idValue" }],
         }),
       ).toBe("/test/idValue");
+    });
+    test("return url error", () => {
+      expect(() =>
+        utils.assignParamsToUrl({
+          url: null as any,
+          params: [{ key: "id", value: "idValue" }],
+        }),
+      ).toThrowError();
     });
   });
 });

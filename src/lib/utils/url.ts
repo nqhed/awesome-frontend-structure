@@ -19,7 +19,7 @@ export function assignParamsToUrl({
   params: { key: string; value: string }[];
 }) {
   if (typeof url !== "string") {
-    return "";
+    throw Error("url must be a string.");
   }
   if (
     !Array.isArray(params) ||

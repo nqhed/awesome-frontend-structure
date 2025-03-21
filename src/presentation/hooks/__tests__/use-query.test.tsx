@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, test, expect } from "vitest";
 import { renderHook, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
@@ -11,7 +11,7 @@ const wrapper = ({ children }: { children?: ReactNode }) => (
 );
 
 describe("useQuery", () => {
-  it("should return the data", async () => {
+  test("return the data", async () => {
     const { result } = renderHook(
       () =>
         useQuery({

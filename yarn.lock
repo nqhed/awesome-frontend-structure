@@ -47,7 +47,7 @@
   dependencies:
     "@babel/types" "^7.26.10"
 
-"@babel/runtime@^7.12.5", "@babel/runtime@^7.23.2", "@babel/runtime@^7.25.0", "@babel/runtime@^7.26.10":
+"@babel/runtime@^7.12.5", "@babel/runtime@^7.17.2", "@babel/runtime@^7.23.2", "@babel/runtime@^7.25.0", "@babel/runtime@^7.26.10":
   version "7.26.10"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.26.10.tgz#a07b4d8fa27af131a633d7b3524db803eb4764c2"
   integrity sha512-2WJMeRQPHKSPemqk/awGrAiuFfzBmOIPXKizAsVhWH9YJqLZ0H+HS4c8loHGgW6utJ3E/ejXQUsiGaQy2NZ9Fw==
@@ -427,6 +427,13 @@
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/@pkgjs/parseargs/-/parseargs-0.11.0.tgz#a77ea742fab25775145434eb1d2328cf5013ac33"
   integrity sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==
+
+"@playwright/test@^1.51.1":
+  version "1.51.1"
+  resolved "https://registry.yarnpkg.com/@playwright/test/-/test-1.51.1.tgz#75357d513221a7be0baad75f01e966baf9c41a2e"
+  integrity sha512-nM+kEaTSAoVlXmMPH10017vn3FSiFqr/bh4fKg9vmAdMfd9SDqRZNvPSiAHADc/itWak+qPvMPZQOPwCBW7k7Q==
+  dependencies:
+    playwright "1.51.1"
 
 "@radix-ui/number@1.1.0":
   version "1.1.0"
@@ -1755,6 +1762,11 @@ form-data@^4.0.0, form-data@^4.0.1:
     es-set-tostringtag "^2.1.0"
     mime-types "^2.1.12"
 
+fsevents@2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
+  integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
+
 fsevents@~2.3.2, fsevents@~2.3.3:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.3.tgz#cac6407785d03675a2a5e1a5305c697b347d90d6"
@@ -1917,6 +1929,13 @@ i18next-http-backend@^3.0.2:
   integrity sha512-PdlvPnvIp4E1sYi46Ik4tBYh/v/NbYfFFgTjkwFl0is8A18s7/bx9aXqsrOax9WUbeNS6mD2oix7Z0yGGf6m5g==
   dependencies:
     cross-fetch "4.0.0"
+
+i18next@^21.10.0:
+  version "21.10.0"
+  resolved "https://registry.yarnpkg.com/i18next/-/i18next-21.10.0.tgz#85429af55fdca4858345d0e16b584ec29520197d"
+  integrity sha512-YeuIBmFsGjUfO3qBmMOc0rQaun4mIpGKET5WDwvu8lU7gvwpcariZLNtL0Fzj+zazcHUrlXHiptcFhBMFaxzfg==
+  dependencies:
+    "@babel/runtime" "^7.17.2"
 
 i18next@^24.2.2:
   version "24.2.3"
@@ -2377,6 +2396,27 @@ picomatch@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.3.1.tgz#3ba3833733646d9d3e4995946c1365a67fb07a42"
   integrity sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==
+
+playwright-core@1.51.1:
+  version "1.51.1"
+  resolved "https://registry.yarnpkg.com/playwright-core/-/playwright-core-1.51.1.tgz#d57f0393e02416f32a47cf82b27533656a8acce1"
+  integrity sha512-/crRMj8+j/Nq5s8QcvegseuyeZPxpQCZb6HNk3Sos3BlZyAknRjoyJPFWkpNn8v0+P3WiwqFF8P+zQo4eqiNuw==
+
+playwright-i18next-fixture@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/playwright-i18next-fixture/-/playwright-i18next-fixture-1.0.0.tgz#f8862b9794a467a0fc117c3ba98a1aa86088197f"
+  integrity sha512-7YQXB8zNGlu8ThXaM1pfGefcHdS97FE0Y4R/VrSLwi2DqjJrYx60cWR4KgcEjGvOUaaVMgyu7WlbQJDoHXGzAQ==
+  dependencies:
+    i18next "^21.10.0"
+
+playwright@1.51.1:
+  version "1.51.1"
+  resolved "https://registry.yarnpkg.com/playwright/-/playwright-1.51.1.tgz#ae1467ee318083968ad28d6990db59f47a55390f"
+  integrity sha512-kkx+MB2KQRkyxjYPc3a0wLZZoDczmppyGJIvQ43l+aZihkaVvmu/21kiyaHeHjiFxjxNNFnUncKmcGIyOojsaw==
+  dependencies:
+    playwright-core "1.51.1"
+  optionalDependencies:
+    fsevents "2.3.2"
 
 postcss@^8.5.3:
   version "8.5.3"

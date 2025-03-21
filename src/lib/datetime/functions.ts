@@ -9,7 +9,6 @@ export function getDateFormat_yyyyMMdd_hyphen({
     const newDate = dateFns.format(datetime.toString(), "yyyy-MM-dd");
     return newDate;
   }
-
   throw Error("datetime must be a string or date");
 }
 
@@ -22,6 +21,5 @@ export function getDateFormat_yyyyMMdd_slash({
     const newDate = dateFns.format(datetime.toString(), "yyyy/MM/dd");
     return newDate;
   }
-
   throw Error("datetime must be a string or date");
 }

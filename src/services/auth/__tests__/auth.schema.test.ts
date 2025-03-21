@@ -1,9 +1,9 @@
-import { describe, it, expect } from "vitest";
+import { describe, test, expect } from "vitest";
 import { auth } from "@/services/auth";
 
 describe("Auth Service Schema", () => {
   describe("loginInputSchema", () => {
-    it("should run without error", () => {
+    test("run without error", () => {
       const result = auth.loginInputSchema.safeParse({
         username: "test",
         password: "test",
@@ -13,7 +13,7 @@ describe("Auth Service Schema", () => {
         password: "test",
       });
     });
-    it("should run with error", () => {
+    test("run with error", () => {
       const result = auth.loginInputSchema.safeParse({
         username: null,
         password: null,

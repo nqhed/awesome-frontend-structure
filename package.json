@@ -9,7 +9,9 @@
     "lint": "eslint .",
     "format": "prettier . --write",
     "preview": "vite preview",
-    "test": "vitest run --coverage.enabled --coverage.reporter=text --coverage.reporter=text-summary"
+    "test:unit": "vitest run --coverage.enabled --coverage.reporter=text --coverage.reporter=text-summary",
+    "test:e2e": "NODE_ENV=test playwright test --ui",
+    "test:e2e:ci": "npx playwright test"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.2",
@@ -37,6 +39,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
+    "@playwright/test": "^1.51.1",
     "@tailwindcss/vite": "^4.0.8",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.2.0",
@@ -52,6 +55,7 @@
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
     "jsdom": "^26.0.0",
+    "playwright-i18next-fixture": "^1.0.0",
     "prettier": "3.5.3",
     "react-test-renderer": "^19.0.0",
     "tailwindcss": "^4.0.8",

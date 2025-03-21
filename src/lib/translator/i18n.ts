@@ -11,7 +11,9 @@ const cacheLangKey = STORAGES.LOCAL.LANGUAGE;
 const cacheLanguage =
   `${process.env.NODE_ENV}`.toLowerCase() === "test"
     ? null
-    : localStorage.getItem(cacheLangKey);
+    : typeof window !== "undefined" && window.localStorage
+      ? window.localStorage.getItem(cacheLangKey)
+      : null;
 
 if (cacheLanguage) {
   initLg = cacheLanguage;

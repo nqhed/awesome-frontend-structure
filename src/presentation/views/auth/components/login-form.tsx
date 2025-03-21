@@ -42,9 +42,13 @@ const LoginForm = () => {
             <FormItem>
               <FormLabel>Username</FormLabel>
               <FormControl>
-                <Input placeholder="Enter username" {...field} />
+                <Input
+                  placeholder="Enter username"
+                  {...field}
+                  data-testid="login-form-input-username"
+                />
               </FormControl>
-              <FormMessage />
+              <FormMessage data-testid="login-form-helper-text-username" />
             </FormItem>
           )}
         />
@@ -59,13 +63,16 @@ const LoginForm = () => {
                   placeholder="Enter password"
                   {...field}
                   type="password"
+                  data-testid="login-form-input-username"
                 />
               </FormControl>
-              <FormMessage />
+              <FormMessage data-testid="login-form-helper-text-password" />
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit" data-testid="login-form-button-submit">
+          Submit
+        </Button>
       </form>
     </Form>
   );
