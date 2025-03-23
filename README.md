@@ -86,7 +86,6 @@ Below is a structure for React applications. There may be some differences in th
 | ----------------------------------------- | ----------- | --------------------------------------------------------------------- |
 | **Layered Architecture (N-Tier)**         | ✅✅✅ High | Clear separation of Presentation, Services, and Models                |
 | **View-Based Modular Architecture (VBA)** | ✅✅✅ High | View-based organization (`views/view-a/`)                             |
-| **Component-Driven Architecture (CDA)**   | ✅✅ Medium | UI modularization using `components/ui/`                              |
 | **Feature-Sliced Design (FSD)**           | ❌ Low      | Missing feature-based layers like `shared/`, `entities/`, `features/` |
 | **Domain-Driven Design (DDD)**            | ❌ Very Low | No explicit domain layer or use-case separation                       |
 | **Clean Architecture**                    | ❌ Low      | No clear **domain layer**, **use cases**, or **dependency inversion** |
