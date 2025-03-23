@@ -1,6 +1,6 @@
-# Awesome Frontend Structure
+# Awesome React Structure
 
-Below is a general structure for Frontend applications. There may be some differences in the source code to suit the project's technology and business requirements.
+Below is a general structure for React applications. There may be some differences in the source code to suit the project's technology and business requirements.
 
 ```
 .
@@ -13,7 +13,8 @@ Below is a general structure for Frontend applications. There may be some differ
 │   │   ├── images/                # Image assets
 │   │   ├── csv-files/             # CSV data files
 │   │   └── ...                    # Other static assets
-│   ├── configs/                   # Configuration files (e.g., API keys, environment settings)
+│   ├── configs/                   # Configuration files (e.g., environment settings)
+│   ├── e2e-tests/                  # e2e test files (e.g., playwright, cypress)
 │   ├── lib/                        # Utility libraries and helpers
 │   │   ├── __test__/               # Tests for utility functions
 │   │   ├── constants/              # Constant values
@@ -166,7 +167,14 @@ Below is a general structure for Frontend applications. There may be some differ
 
 # 🧪 Testing Strategy
 
-Updating...
+Tests are helpful, but they can’t catch every bug. No test setup can make your app 100% bug-free. There are different ways to test, and each one covers different parts of your app. Based on my experience, here’s how I usually organize testing for a react app:
+
+| **Layer**        | **Target**                                  | **Tools**             |
+|------------------|----------------------------------------------|----------------------------------|
+| 🧪 Unit Test     | Pure functions, Validation schemas (zod, yup, .etc)                  | Jest, Vitest                             |
+| 🔗 Integration  | Custom hooks, store management               | RTL + `renderHook`, MSW         |
+| 🚀 E2E           | UI logic, interactions, critical flows       | Playwright or Cypress           |
+
 
 <br/>
 
@@ -218,7 +226,7 @@ More abstraction = more boilerplate = slower development.
 
 <br/>
 
-# 🤏 What if your project is too small and hard to follow my structure?
+# 🤏 What if your project is too hard to follow my structure, or you want to use a simpler one?
 
 Just follow this article: [Recommended Folder Structure for React 2025](https://dev.to/pramod_boda/recommended-folder-structure-for-react-2025-48mc)
 
@@ -227,12 +235,22 @@ Just follow this article: [Recommended Folder Structure for React 2025](https://
 # 📖 References
 
 - [Architecture of modern frontend](https://blog.meetbrackets.com/architectures-of-modern-front-end-applications-8859dfe6c12e)
+
 - [Feature-Sliced-Design (FSD) the best frontend architecture](https://dev.to/m_midas/feature-sliced-design-the-best-frontend-architecture-4noj)
+
 - [React Folder Structure in 5 Steps - 2025](https://www.robinwieruch.de/react-folder-structure/)
+
 - [3 Levels of Data Validation in a Full Stack Application With React](https://www.highlight.io/blog/3-levels-of-data-validation-in-a-full-stack-application-with-react)
+
 - [Clean Architecture on Frontend](https://dev.to/bespoyasov/clean-architecture-on-frontend-4311)
+
 - [Story of a Failed React Project](https://dev.to/mohammadfaisal/story-of-a-failed-react-project-4bhp)
+
 - [Feature-Sliced Design document](https://github.com/feature-sliced)
+
+- [My struggles with React Testing Library](https://blog.hao.dev/my-struggles-with-react-testing-library)
+
+- [The myth of speed without testing](https://www.linkedin.com/pulse/myth-speed-without-testing-juan-irigoyen-sak6f/)
 
 <br/>
 
