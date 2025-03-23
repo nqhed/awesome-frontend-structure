@@ -171,7 +171,7 @@ Tests are helpful, but they can’t catch every bug. No test setup can make your
 
 | **Layer**        | **Target**                                  | **Tools**             |
 |------------------|----------------------------------------------|----------------------------------|
-| 🧪 Unit Test     | Pure functions, Validation schemas (zod, yup, .etc)                  | Jest, Vitest                             |
+| 🔬 Unit Test     | Pure functions, Validation schemas (zod, yup, .etc)                  | Jest, Vitest                             |
 | 🔗 Integration  | Custom hooks, store management               | RTL + `renderHook`, MSW         |
 | 🚀 E2E           | UI logic, interactions, critical flows       | Playwright or Cypress           |
 
