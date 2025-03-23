@@ -96,7 +96,7 @@ Below is a general structure for React applications. There may be some differenc
 - ✅ That structure is good for UI-heavy applications like Next.js, React-based dashboards, or SaaS platforms.
 - ✅ It scales well in terms of views, making it great for complex UI applications.
 
-<br/>
+---
 
 # 💅 Convention
 
@@ -163,7 +163,7 @@ Below is a general structure for React applications. There may be some differenc
 | **GraphQL Queries & Mutations** | camelCase                                              | `getUserQuery`, `updateProfileMutation`   |
 | **Enums**                       | PascalCase                                             | `UserRole.Admin`, `ButtonVariant.Primary` |
 
-<br/>
+---
 
 # 🧪 Testing Strategy
 
@@ -176,7 +176,7 @@ Tests are helpful, but they can’t catch every bug. No test setup can make your
 | 🚀 E2E           | UI logic, interactions, critical flows       | Playwright or Cypress           |
 
 
-<br/>
+---
 
 # ⁉️ Why Does It Not Fully Follow Domain-Driven Design or Clean Architecture?
 
@@ -206,7 +206,7 @@ Most frontend apps prioritize UI/UX, performance, and maintainability over deep 
 More abstraction = more boilerplate = slower development.
 💡 Adding unnecessary layers increases complexity without making the app more scalable or maintainable.
 
-<br/>
+---
 
 # 🤌🏼 How About Feature-Sliced Design (FSD)?
 
@@ -224,13 +224,13 @@ More abstraction = more boilerplate = slower development.
 
 5️⃣ Harder to refactor shared logic.
 
-<br/>
+---
 
 # 🤏 What if your project is too hard to follow my structure, or you want to use a simpler one?
 
 Just follow this article: [Recommended Folder Structure for React 2025](https://dev.to/pramod_boda/recommended-folder-structure-for-react-2025-48mc)
 
-<br/>
+---
 
 # 📖 References
 
@@ -252,7 +252,7 @@ Just follow this article: [Recommended Folder Structure for React 2025](https://
 
 - [The myth of speed without testing](https://www.linkedin.com/pulse/myth-speed-without-testing-juan-irigoyen-sak6f/)
 
-<br/>
+---
 
 # 🗄️ Examples
 
