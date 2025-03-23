@@ -132,7 +132,7 @@ Below is a structure for React applications. There may be some differences in th
 - My component file names and hook file names use `kebab-case` to synchronize with ShadCN-UI. You can use `PascalCase` for component file names and `camelCase` for hooks that start with `use` to match your team's codebase.
 - You should apply the `Wrapper Pattern` for external libraries and avoid calling them directly.
 
-#️⃣ Example: If you use `Axios`, you should wrap it in an `httpClient` variable inside the `http-client.ts` file and use it to call APIs. In the case of UI, you should use components from libraries like AntD, MUI, etc., **indirectly**, similar to how ShadCN-UI does. This approach makes it easier to customize styles, logic, and other aspects in one place for the entire application.
+Example: If you use `Axios`, you should wrap it in an `httpClient` variable inside the `http-client.ts` file and use it to call APIs. In the case of UI, you should use components from libraries like AntD, MUI, etc., **indirectly**, similar to how ShadCN-UI does. This approach makes it easier to customize styles, logic, and other aspects in one place for the entire application.
 
 ✅ Benefits of the Wrapper Pattern:
 
