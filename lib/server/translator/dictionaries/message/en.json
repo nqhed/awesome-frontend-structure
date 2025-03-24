@@ -1,0 +1,7 @@
+{
+  "ERROR": {
+    "COMMON_FAILED": "Something went wrong. Please try again later.",
+    "DATA_IS_REQUIRED": "This data is required.",
+    "INVALID_INPUT": "Invalid input."
+  }
+}
