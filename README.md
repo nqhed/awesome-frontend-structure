@@ -270,3 +270,5 @@ This structure strikes a **practical balance** between flexibility and conventio
 # 🗄️ Examples
 
 - [Vite - React - Typescript - Shadcn](https://github.com/nqhed/awesome-frontend-structure/tree/vite-react-ts-shadcn)
+
+- [Next - App router - Typescript - Shadcn](https://github.com/nqhed/awesome-react-structure/tree/next-appdir-ts-shadcn)
